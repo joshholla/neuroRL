@@ -2,6 +2,7 @@
 
 from comet_ml import Experiment
 
+import neuroRL
 import time
 import argparse
 import os

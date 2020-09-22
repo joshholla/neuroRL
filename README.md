@@ -8,36 +8,47 @@ We plan on doing this via having people play a gridworld game while connected to
 The gridworld is built upon the fine work at https://github.com/maximecb/gym-minigrid
 
 ## Getting started
-Load the gym environment and dependencies with
+First ensure that you have installed python3 on your system.   
+Install the gym environment and other dependencies by navigating to this folder and running:
 ```
-TODO
-cd minigrid
 pip3 install -e .
 ```
-(this should install the additional custom environments required for running our tests)
+(this should install the additional custom environments required for running our tests)   
 
 
-If you would like to play the game, make sure you are in xyz folder. Then run 
+If you would like to play the game, assuming you are in the root folder, run 
 
 ```
-./launch.sh
+cd neuroRL
+python enhanced_neuro_view.py
 ```
-The following flags are optional:
+The following flags add functionality: 
 ```
-./todo
+--comet [Flag to toggle logging data to cometml]  
+--namestr [Flag for the remote name of the experiment (in cometml)]  
+--random_inputs [Including these inputs will randomize the inputs on the keyboard]  
+--expert_view [This will let the user see the entire map including what the agent normally has vision of]  
 ```
 
 
-For logging to comet.ml, please ensure that you have a settings.json file in the following format:
-
-To run the RL scripts, please run the following commands:
-For DQN:
+For logging to comet.ml, please ensure that you have a settings.json file in the `/rlscripts` folder in the following format:
 ```
-./todo
+{
+  "api_key": "<Insert Key from comet here>",
+  "project_name": "<Where you'd like to log your results>",
+  "workspace": "<usually your comet username>"
+}
+```
+
+To run DQN on this environment, please run the following commands:
+```
+./runrl.sh
 ```
 
 Thanks for visiting this project!
 
+
 ## TODO
-+ Instructions for how to use the environment / Command line instrucitons
-+ Add the settings.json file? or instructions for what to add.
+> License?  
+> good to go for BIC machines?  
+

@@ -14,6 +14,7 @@ import DQN
 
 import gym
 import gym_minigrid
+import neuroRL
 
 import time
 
