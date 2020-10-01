@@ -61,8 +61,8 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
 
     parser.add_argument("--comet", action='store_true', default=False, help='to use https://www.comet.ml/joshholla/neuro-rl/view/new for logging')
-    parser.add_argument("--namestr",type=str,default='neuroRLTestRun',help='additional info in output filename to describe experiments')
-    parser.add_argument("--tag",type=str,default='DQN',help='additional info in output filename to describe experiments')
+    parser.add_argument("--namestr",type=str,default='DQN',help='additional info in output filename to describe experiments')
+    parser.add_argument("--tag",type=str,default='v0.1.0',help='additional info in output filename to describe experiments')
 
     parser.add_argument("--env_name", default="MiniGrid-Empty-Random-10x10-v0")  # Custom gym environment name
     parser.add_argument("--seed", default=0, type=int)  # Sets Gym, PyTorch and Numpy seeds

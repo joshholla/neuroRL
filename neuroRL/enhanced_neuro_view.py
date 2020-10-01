@@ -260,7 +260,7 @@ parser.add_argument(
 parser.add_argument(
     '--tag',
     type=str,
-    default='Human',
+    default='v0.1.0',
     help='additional info in output filename to describe experiments'
 )
 parser.add_argument(
