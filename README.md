@@ -75,7 +75,7 @@ The following flags add functionality to your experiments:
 --comet [Flag to toggle logging data to cometml]  
 --namestr [Flag for the remote name of the experiment (in cometml)]  
 --random_inputs [Including these inputs will randomize the inputs on the keyboard]  
---expert_view [This will let the user see the entire map including what the agent normally has vision of]  
+--expert_view [Enables access to higher debugging and an overview of agent activity]  
 ```
 
 For logging to comet.ml, please ensure that you have a settings.json file in the `/rlscripts` folder in the following format:
@@ -93,9 +93,4 @@ To run an RL agent on this environment, you can run the following commands:
 ```
 
 Thanks for visiting this project!
-
-
-## TODO
-> License?  
-> good to go for BIC machines?  
 

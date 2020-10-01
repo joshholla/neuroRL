@@ -41,7 +41,6 @@ def reset():
     logs = {
         "action_sequence": action_sequence,
         "state_sequence": state_position_sequence,
-#        "grid_viz_sequence": state_draw_sequence,
         "key_press_sequence": key_press_sequence,
         "decision_times": decision_time_logs,
         "rewards": reward_logs
@@ -70,7 +69,6 @@ def reset():
 
     # Resetting the logging stuff.
     action_sequence = []
-#    state_draw_sequence = []
     state_position_sequence = []
     decision_time_logs = []
     reward_logs = []
@@ -91,8 +89,10 @@ def step(action, decision_time):
     reward_logs.append(reward)
 
     info = 'episode=%s, step=%s, reward=%.2f, decision time=%.2f, time=%.2f' % (episode_num, env.step_count, reward, decision_time, time.time())
-    print('episode=%s, step=%s, reward=%.2f, decision time=%.2f, time=%.2f' % (episode_num, env.step_count, reward, decision_time, time.time()))
-    print(f"State Visitation Table {state_action_table} Episode Num: {episode_num+1}")
+
+    if args.expert_view:
+        print('episode=%s, step=%s, reward=%.2f, decision time=%.2f, time=%.2f' % (episode_num, env.step_count, reward, decision_time, time.time()))
+        print(f"State Visitation Table {state_action_table} Episode Num: {episode_num+1}")
     if args.comet:
         args.experiment.log_metric("reward", reward, step= env.step_count)
         args.experiment.log_others(state_action_table)
@@ -104,7 +104,8 @@ def step(action, decision_time):
         redraw(obs)
 
 def key_handler(event):
-    print('pressed', event.key)
+    if args.expert_view:
+        print('pressed', event.key)
 
     if env.step_count == 0:
         state_position_sequence.append(env.agent_pos)
@@ -272,7 +273,7 @@ parser.add_argument(
 parser.add_argument(
     '--expert_view',
     default=False,
-    help="Draw the overall map along with the agent view. for debugging",
+    help="Draw the overall map along with the agent view. More messages for debugging",
     action='store_true'
 )
 
@@ -305,19 +306,14 @@ if args.comet:
 episode_num = 0
 last_time = time.time()
 order_choices = np.arange(3)
-save_name = args.namestr+"_run" # think about what name I want to save.
+save_name = args.namestr+"_run"
 action_sequence = []
 state_draw_sequence = []
 state_position_sequence = []
 decision_time_logs = []
 reward_logs = []
 key_press_sequence = []
-# goal_position = env. hmm, it's set up to be in bottom right corner now.
-# goal_position = []
 state_action_table = {}
-
-
-#state_draw_sequence.append(env.__str__)
 
 if args.random_inputs:
     order_choices = np.random.permutation(np.arange(3))
