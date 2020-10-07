@@ -12,6 +12,6 @@ setup(
         'numpy>=1.15.0',
         'gym_minigrid==1.0.1',
         'comet-ml==3.2.1',
-        'matplotlib==3.0.0'
+        'matplotlib>=3.3.2'
     ]
 )

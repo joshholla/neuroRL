@@ -37,7 +37,14 @@ The folder locally structure should look like this
     `-- setup.py
 ```
 To set up a virtual environment, run the following commands
+```
+cd neuroRL
+virtualenv --system-site-packages -p python3.6 neuroRLenv
+source neuroRLenv/bin/activate
+```
 
+
+Conda users can alternatively use these commands:
 ```
 cd neuroRL
 conda create --name neuroRLenv python=3.6
@@ -51,8 +58,9 @@ pip3 install -e .
 ```
 (this will install the additional custom environments required for running our tests)  
 
-If you would like to play the game, first ensure that you activate the virtual environment we created 
+If you would like to play the game, first ensure that you activate the virtual environment we created using either of the two commands below, depending on which tool you used:
 ```
+source neuroRLenv/bin/activate
 conda activate neuroRLenv
 ```
 Assuming you are in the folder where this README resides, run 
@@ -78,7 +86,7 @@ The following flags add functionality to your experiments:
 --expert_view [Enables access to higher debugging and an overview of agent activity]  
 ```
 
-For logging to comet.ml, please ensure that you have a settings.json file in the `/rlscripts` folder in the following format:
+For logging to comet.ml, please ensure that you have a `settings.json` file in the `/rlscripts` folder in the following format:
 ```
 {
   "api_key": "<Insert Key from comet here>",
@@ -86,11 +94,25 @@ For logging to comet.ml, please ensure that you have a settings.json file in the
   "workspace": "<usually your comet username>"
 }
 ```
+If we've sent you an email asking for help, a `settings.json` file will be attached along with that email.
+
 
 To run an RL agent on this environment, you can run the following commands:
 ```
 ./runrl.sh
 ```
+
+If you're able to run this project locally, and have played around with the game, we have a few questions for you!
+```
++ Does the game work for you? did you run into any issues with getting it to run?
++ Do you think it is suitable for an fMRI environment?
++ What could improve the experience?
++ Is it engaging? How long did you play for?
++ Would you change the controls to anything else?
+```
+Do send your feedback to neurorlfeedback[at]gmail.com
+
+
 
 Thanks for visiting this project!
 
