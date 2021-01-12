@@ -15,10 +15,9 @@ Begin by cloning this project.
 git clone https://github.com/joshholla/neuroRL.git 
 ```
 
-The folder locally structure should look like this
-
+The folder structure should look like this:
 ```
-.
+.  <--- (YOU ARE HERE! :)
 `-- neuroRL
     |-- README.md
     |-- neuroRL
@@ -127,16 +126,6 @@ If you'd like to launch the game without any logging, you can use this:
 python enhanced_neuro_view.py --comet --namestr=$mynamestr
 ```
 
-
-## Running an RL agent:
-
-To run an RL agent on this environment, you can run the following commands:
-```
-./runrl.sh
-```
-
-
-
 ## Feedback:  
 If you're able to run this project locally, and have played around with the game, we have a few questions for you!  
 (This can be entered in the google form that was mailed to you.)  
@@ -148,7 +137,10 @@ Read on if you stumbled upon this project:
 + Is it engaging? How long did you play for?
 + Would you change the controls to anything else?
 ```
-Do send your feedback to neurorlfeedback[at]gmail.com
+
+If running this project resulted in errors on the console, I'd love to hear about them (so that I can fix em!)  
+
+Do send your feedback or error messages to neurorlfeedback[at]gmail.com  
 
 
 
